@@ -1,0 +1,48 @@
+SEALS DISPATCH SERVICES
+Date: 2026-03-12
+
+1. Saginaw MI -> Indianapolis IN
+   Vehicle: Box Truck
+   Trip Miles: 315  Deadhead: 0
+   Rate: $1350
+   TRUE RPM: $4.29/mile
+   Profit Score: $1098
+   Stops: 1
+   Suggested Bid: $866
+   Minimum Bid: $709
+   Decision: TAKE
+   Broker: Integrity Express
+
+2. Flint MI -> Columbus OH
+   Vehicle: Box Truck
+   Trip Miles: 210  Deadhead: 55
+   Rate: $950
+   TRUE RPM: $3.58/mile
+   Profit Score: $738
+   Stops: 1
+   Suggested Bid: $578
+   Minimum Bid: $472
+   Decision: TAKE
+   Broker: Arrive Logistics
+
+3. Flint MI ->  Columbus OH
+   Vehicle: Box Truck
+   Trip Miles: 210  Deadhead: 55
+   Rate: $950
+   TRUE RPM: $3.58/mile
+   Profit Score: $738
+   Stops: 1
+   Suggested Bid: $578
+   Minimum Bid: $472
+   Decision: TAKE
+   Broker: Arrive Logistics
+
+BEST LOAD TODAY
+Saginaw MI -> Indianapolis IN
+Rate: $1350
+TRUE RPM: $4.29/mile
+Profit Score: $1098
+Suggested Bid: $866
+Minimum Bid: $709
+Decision: TAKE
+Broker: Integrity Express

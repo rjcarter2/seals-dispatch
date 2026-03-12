@@ -1,0 +1,373 @@
+Delivered-To: rjcarter2.rc@gmail.com
+Received: by 2002:aa6:c383:0:b0:32d:ed8b:84d2 with SMTP id q3csp2053662lkp;
+        Tue, 10 Mar 2026 10:05:58 -0700 (PDT)
+X-Received: by 2002:a05:7022:488:b0:124:acc6:6dd1 with SMTP id a92af1059eb24-128c2ea71f0mr7656329c88.46.1773162357343;
+        Tue, 10 Mar 2026 10:05:57 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1773162357; cv=fail;
+        d=google.com; s=arc-20240605;
+        b=dkcGfylhnPt+jAq4F8kusw36yp/v4f0f1j+/C+luie6fylr0HRddQaJdEiyWt3FNEi
+         Zk1eJZCkOPYeqxqn6vLixiciib2d2khx+WhR4wctA4lF7ZM2Pkz1pYkWeNKaN34+CfcH
+         tLSgF4UqIUP9yJ2vsW3MZCCBJMF2gGAgTKcAgM8qM6YOemcdvebJzsvK2vQJ8RLMJzjU
+         FUvB/u7vPmHCQuHtMcsUEJR5fA9tHU9McwFdoUZtF/rpevp5qB68o/jR7R0+v9OTrUQS
+         CKx2CUBPB27j6R5Jcx9m1ttpIzmFsfmq1L2cnJCKbnVuOdVfsCSUGwRdafpYIQybCMks
+         /RYg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:msip_labels:content-language:accept-language
+         :in-reply-to:references:message-id:date:thread-index:thread-topic
+         :subject:to:from:dkim-signature;
+        bh=IQdDqCJDNcRV9DVFg5MbL9Ao8+TVzFRbtCRLflOzMcI=;
+        fh=xhumVbMDOpwAVxTfnIYZx9FbC7gJmesFNufAZwFEB9I=;
+        b=dCihXBNqUFzVOH5wkQ5WSRndmEF3vJgeMbjHhw706FZQd5LS47SEAXFn2gUrWYJYYD
+         f8S7utRM9J8gjdjmcPxZJwSQQ6I/0d61R/Qwt+V6mT7G7/U7UjhGSuSLi/jDs0NDG0qG
+         5KV7WPgqKAWde/F9/eOdqHWnqZU/DjwuUQ6ptbTxNxhP/xRdSQfu2lpPfQsFtivmyjzG
+         iqpg1l1fycsWkqQPdQbhMmGhjUuZoIIxpxVSR+Jdz8L8uNe3uN6bXql87UXpuNgGhaIW
+         NLfWngCHUpjFJk1/Qx2PaH8HppOQ0IVpNC/GiHWdD55MmPXIAi+0Wvpiik5KYSwoK7d4
+         jvbQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@loves.com header.s=loves header.b=DDffTC0b;
+       arc=fail (body hash mismatch);
+       spf=pass (google.com: domain of prvs=052992adf8=latoya.mukes@loves.com designates 148.163.148.89 as permitted sender) smtp.mailfrom="prvs=052992adf8=latoya.mukes@loves.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=loves.com
+Return-Path: <prvs=052992adf8=latoya.mukes@loves.com>
+Received: from mx0b-0011d002.pphosted.com (mx0a-0011d002.pphosted.com. [148.163.148.89])
+        by mx.google.com with ESMTPS id a92af1059eb24-128c3ca4794si27464271c88.2.2026.03.10.10.05.56
+        for <rjcarter2.rc@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 10 Mar 2026 10:05:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of prvs=052992adf8=latoya.mukes@loves.com designates 148.163.148.89 as permitted sender) client-ip=148.163.148.89;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@loves.com header.s=loves header.b=DDffTC0b;
+       arc=fail (body hash mismatch);
+       spf=pass (google.com: domain of prvs=052992adf8=latoya.mukes@loves.com designates 148.163.148.89 as permitted sender) smtp.mailfrom="prvs=052992adf8=latoya.mukes@loves.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=loves.com
+Received: from pps.filterd (m0094624.ppops.net [127.0.0.1])
+	by mx0b-0011d002.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62ADuMRh603068
+	for <rjcarter2.rc@gmail.com>; Tue, 10 Mar 2026 12:05:56 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=loves.com; h=
+	content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=loves; bh=IQdDqCJDNcRV9DVFg5MbL9Ao8+TV
+	zFRbtCRLflOzMcI=; b=DDffTC0bw2pavd7C1Tuj314MS6KvVpDe9clm8Xj6WxBW
+	XWyJTyN0nnSI62TmNHvM8wP3fvXgw+ulyY2GJvJZVmPB59f9WS+LcvT8/f/Vvkfw
+	yEbL4/7jfyX8zaF8ME4u/02lYc4vv/qWRRAKVtVGVWKjesjZJxZKlA7bP8V9nzL7
+	dzdJEC+4W/BF40/aqmSHUuH8LpZapaW0C912AyqACDHweFXrSdmT8H3mWYuY17QN
+	xl21GYMWQEAgFXJAHjq8P+C0KzMkVbbxD1qzmjhUbWM54MzopsqRn0ZV9xIdTcp4
+	CJAocXpmyB4ge1tvxOyOw4fpmH/T/Iv4ryK3F4I00A==
+Received: from cy7pr03cu001.outbound.protection.outlook.com (mail-westcentralusazon11010000.outbound.protection.outlook.com [40.93.198.0])
+	by mx0b-0011d002.pphosted.com (PPS) with ESMTPS id 4ctmmh0vuk-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <rjcarter2.rc@gmail.com>; Tue, 10 Mar 2026 12:05:55 -0500 (CDT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=UXc8Y5UaFpP0X8gq+YgQTmIv01hp7wRC7s8gLk91IdLuay3o6nr0mfaDk1RVebk7JgF7VMWf7F1RyduGyq1LeP23Gxf8jwvP85A+MHpOm8IsPvfV8DiybaoF1Uc73jylImXXZpFt3158xCtMXURjJMnGzz1s6SPUuhWKzgOa8R54+y74tyGIC7fUBAjMAw8SY5tSIatNtU0iB3As4aRrb66HOlPGPn79i2kXCkhW5g/kUwFMY90Q1xMzcYfGzZyqN+OO1W7cOj065Hlb9eyja20oKhlzzk+KRgz4eiX+Do9B9mRLm4M9oZaxySDT1MimziejG7uCxEv/a7O4/wylag==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=dERNk1A6lNuVcp0CmoIF8Bx/NB3udDzn238zMYuPt1U=;
+ b=UZD1EcJW0K0fxKa1eymGa+r8Vq02MoWR/0mNrjEzxbLeyLeR1HxLBF9YXX2zuR/jFkSENJCFKUN5RZU/cLs7GKlszd0svdKG6O9T62AOIjvUkhlax6CKpdT2P9tXcvoMptHibMbQRrk4Ku2xt6ePMWjdJNlDF0T5PLhX7V96UrUTqsSm16YJcEG+vxr8OfFzN9FRf6JLJ6pDP7M2tfS2Xf8AETam4cyLhISJ4PFr6NTOMx8SxVsL0W4OnnjPGtctKiAnBxCCW5H300K+cdRbiojp9HyGOykMry/D8ICv/i6W5QJKvgufj9qXm8Ld1Viivkoc1kqSxueWfGu+XN8hPw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=loves.com; dmarc=pass action=none header.from=loves.com;
+ dkim=pass header.d=loves.com; arc=none
+Received: from CYYPR16MB5491.namprd16.prod.outlook.com (2603:10b6:930:cb::14)
+ by DS0PR16MB5438.namprd16.prod.outlook.com (2603:10b6:8:168::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.23; Tue, 10 Mar
+ 2026 17:05:54 +0000
+Received: from CYYPR16MB5491.namprd16.prod.outlook.com
+ ([fe80::83cc:395b:1d7a:b775]) by CYYPR16MB5491.namprd16.prod.outlook.com
+ ([fe80::83cc:395b:1d7a:b775%6]) with mapi id 15.20.9678.024; Tue, 10 Mar 2026
+ 17:05:54 +0000
+From: Latoya Mukes <Latoya.Mukes@loves.com>
+To: Randall Carter <rjcarter2.rc@gmail.com>
+Subject: RE: [EXT] Factoring Agreement
+Thread-Topic: [EXT] Factoring Agreement
+Thread-Index: AQHcsKG7ToLj6kOhfkKDyWRePfQRkbWn/uOA
+Date: Tue, 10 Mar 2026 17:05:54 +0000
+Message-ID:
+ <CYYPR16MB54917351604D4FE996348DE79346A@CYYPR16MB5491.namprd16.prod.outlook.com>
+References:
+ <CAMUSyOCnDGb5jtH0O-iMHHC2vET2m+1yzwaEV4-DuQuWJUJRfg@mail.gmail.com>
+In-Reply-To:
+ <CAMUSyOCnDGb5jtH0O-iMHHC2vET2m+1yzwaEV4-DuQuWJUJRfg@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_7de2049b-5b95-446b-a697-380fd25d58d6_ActionId=267d84b7-9e6e-4a2b-ae33-f081de8a654d;MSIP_Label_7de2049b-5b95-446b-a697-380fd25d58d6_ContentBits=0;MSIP_Label_7de2049b-5b95-446b-a697-380fd25d58d6_Enabled=true;MSIP_Label_7de2049b-5b95-446b-a697-380fd25d58d6_Method=Standard;MSIP_Label_7de2049b-5b95-446b-a697-380fd25d58d6_Name=Business
+ Confidential;MSIP_Label_7de2049b-5b95-446b-a697-380fd25d58d6_SetDate=2026-03-10T17:05:20Z;MSIP_Label_7de2049b-5b95-446b-a697-380fd25d58d6_SiteId=80132c19-eaaa-4b91-acf7-a3ed9a50c97b;MSIP_Label_7de2049b-5b95-446b-a697-380fd25d58d6_Tag=10,
+ 3, 0, 1;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: CYYPR16MB5491:EE_|DS0PR16MB5438:EE_
+x-ms-office365-filtering-correlation-id: 6f16c55b-e4fc-4a33-b824-08de7ec74a23
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|366016|1800799024|376014|38070700021|7053199007|8096899003|18002099003|22082099003|56012099003;
+x-microsoft-antispam-message-info:
+ BE/R6w8fjMC4jTXJCGg3iicfVBzQrOey2guXkLCOVtDGunkH55IoeCEu6medHeqRLJTARSP7lxlA6qIaY0Jv5jurpHVAsjq21hlw1dlc2VZHverw+qrKPat9XvjtZjp5lVslHGZJl4wOZznpOLz+dik0+5zfqj7s9BvVduENNVvTQFmWFnY4v0DzGX+QXiQdDe3XWzNI1Cnn9KZaJY2cdpFDAqP7s2mH5+/kgufubZSYriHa6KvBGkTYw0QY9bTqVTv8HKwKLtWAO0zOd7VHHemwcYfEWFxkZsT/XnAGvPkDy+9wCvQVvVcFx9muUYdY+iJZjryZ3p7lXxKevUpujZSGobUhUrTPvwoGCW8qi4tklvkefieoQmns5NlBfDbn1czM8KuB4j4wd/iwNvOKR5I5cBdZZ/ThWUMSpVWDHgksMtFo5iyjI6h3RiBb9w7xkNRdFH9nljMxH41Gey6XYx7663Nf7YkCRY1PiyUsI913yXrGZaHBABUoLa4lmsAnh9D9LDmZBTb48ufSoAUYGBsVXD/r2G2mvOdYppYoxLEY65ajEoD1G0YF5lv5gw9ds4GqkS9GvMpqqUllnM7ksNEOkJ3yCnh2arKoP+w8WwKW9M1wf6L7DJSd4JtGdisUvS4g/k4+tMr0Ar4b7i3736E/uGDy2CJbEv/b8oTJV4RPtK9deCF8TwADohw2jQHlCwrEtafIWxLIj9o6zcrdMHgvbrGZKCZbASzLtQUw/uyZHBNG7r6efcGYRqso9oFF
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CYYPR16MB5491.namprd16.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(38070700021)(7053199007)(8096899003)(18002099003)(22082099003)(56012099003);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?utf-8?B?a0dzYWQ3SHcydjd5U3pFalBNMERNWnlYMjN2ZGdMUUtYRGhFQUtVYktlemY3?=
+ =?utf-8?B?d25pZHIvMHl2MmVvS0RiUTFqdFcrQ3VrdVdEQjBBN1lMNmUwUVkyMm5OM1M4?=
+ =?utf-8?B?WTlxRm1yeEl0Tm05bXRvZ0N1a1J1djg0cndzWENKaTRZSW1zUlhHc01Vcm50?=
+ =?utf-8?B?akplT014T3JwU2xFTVI4RWtFL1l6dUF6VXV0S1p3Q0F2RTV4NHdTQTRncnk1?=
+ =?utf-8?B?Q00rMEV3VXNpdWs2M0ZSMFg0MDR6QklGeGpaejVUc2pyeGUrVkxaM1QwVkRa?=
+ =?utf-8?B?a3VwTVJZV0k3TDdveE85cE9zc2lNSjVzUzFkd3YvdWpsRnVwRnZtWEUvTm5B?=
+ =?utf-8?B?LzFveWM2bnI3RnZaUmp3U0g5b3duQWU1T1N3ZURIL0FRREs4d2c4d3daNzFt?=
+ =?utf-8?B?QUVLcGJlNS8yNnhUT1FIL2Z4WDdydFVNM1NRL3NPdmZuVmZrVzlUZkM1TElJ?=
+ =?utf-8?B?VGU4ek9ydUIzTUhLZFZtelF0MERBOW1sMkFQb1pwTXJmMGZYNUh2V3cwenRE?=
+ =?utf-8?B?a0E2d3I1UXQ4Q0xicnRCb25jdW90RmxjR3N2WUhxcXVycE9oTmVqL0dJcUlx?=
+ =?utf-8?B?UkVyVk1GNUs5OWZJQkFmdEtsSE00TjQ0bVEyMVRVL1JoYm15emIvVVUwRXBV?=
+ =?utf-8?B?TjZ6ZVUxR0VTL3NyWFVHaThmdHN2Wi9oVEJkWWhoVnJoWFl6czJHRENpN1Fp?=
+ =?utf-8?B?MTlmVERrQmVVSmRpUC9qcVhuMkU3NENIdnZseFNVZGlJR1gzbzBmbTNHY0cv?=
+ =?utf-8?B?YyswTEMrVUxQMnV0Uy9xc04wVFhGeWFqTkppSDFPbzdqMTk1QXMxOVBpZ2dl?=
+ =?utf-8?B?ZmZJRGxITUNmMlZSbjRpMlZCUSt5ZWhBMjdIbjVTdHNqMWRBeWF6YTdGYSs4?=
+ =?utf-8?B?TXJ5czlLcjVyWGo4dlJuaGprVkZ6ZCs4RWY3WGJLSFc2Qy9zWXNvUjNsYU53?=
+ =?utf-8?B?bEl3RlRSUWxjS2F1SU8wR25WcUdLZ1JSYTZXNlpoSjVoNGZEdFkzbjdUcGli?=
+ =?utf-8?B?RTJGOWhjd1k0ZHlNWENjRTFjRHRzQ3JkU2tpajNKQnprWFFwaGQrMm5FUXcy?=
+ =?utf-8?B?SmNIVlB2UVpFQWVZbjZSMU1nNDYrK0lFSHVEZTgxNjBpd014b3BqY2FzYWZ2?=
+ =?utf-8?B?ZEZlRlRKSTQ1emdqYWcrMnduVmdyTkw2YkNpbjFKV0NScVRBK0xKV2hMSGc4?=
+ =?utf-8?B?UlN0Nk9LbDFibVUwZU5UNnBrQ29FRHFYRkthTlI3djJZNzMwVXd4ZS9wSUNC?=
+ =?utf-8?B?VDhkTEViVmxZNnI0SUhzcDdwY2lUckF5SW5oRW5oWHRFSVM2WklYOHZSYzk5?=
+ =?utf-8?B?bExnSUZwNmtRQmhQRFFvSi9nZEZTK0pHaVVRalNqeEgxOGhLZGdRellleG5q?=
+ =?utf-8?B?dVh2ZUJjWHhLbVh1NS9iRjFZb0xrMFpYL09JUXVNQkgwWEYwbzYvRXpYVnU4?=
+ =?utf-8?B?SFllNVNwaGRrbVRpbFBPcjNTRk0rTnRMVm1aS0JxMGVTZlQybXZKTzVmc1Qv?=
+ =?utf-8?B?NG9uVnNwZDAxK3pJTkpXYmdpS3QwRzM3RzJFQ240Nmwwa1l2RlRwNlFuZVFB?=
+ =?utf-8?B?Q2lxdVRFcy9VNTI5VGxzMTdXeVkweVNpbVVJNDhCOWR3MWk4Tk45RXJiUjkr?=
+ =?utf-8?B?VW9SdUU4RjY3a29qSzQzWlEvK2Fwd2hXOEhydkFyOW5kVDh2Rkc0K3F0ZFBv?=
+ =?utf-8?B?bmQ3NHY2bDJpSHY4ekpLaER4cjNnNmtUNlZ6Uzl6QlhCV2M1NlRPOUVYYWw4?=
+ =?utf-8?B?NUJIenFzVmdIUVFJRytCWnkzMGlYQjltaU5nc3U3QzE3eUlPVURHcUFuMlhX?=
+ =?utf-8?B?Ry9uK3J5N3l4VHBwZG9DMTFiOCsyb3ZqQ0gxUWo1ZVZXNzVEQTc1QnZSQ3BW?=
+ =?utf-8?B?MW10OEcyZDhnaUtEN2dDNG5zS3hRNGNNY3FUZllFM1FTZVY4OU1BMCsrK1ZN?=
+ =?utf-8?B?aTNWMVZ5bEo2bzM1cERQWU5MTGV4NFJCTmxldHNEeHFXb3p4dUFMZWdzTDJI?=
+ =?utf-8?B?OFQ3R1NSQklPMGJ2ZS9OUHlwVVpRaXFxRHVXeGJ5c0tZbEQ1bmVCait6U25K?=
+ =?utf-8?B?dEtycW56RHZESUgxUzVwL2ZIeHlDNHhpa3lQd2hmTkhNK3VPWDhNNDNPbmdj?=
+ =?utf-8?B?bWZveWFsYW1JRENad2JBZFZqeXIwdkJWeTMxd1lYRWI0OFhLSHRkVUtVQ2du?=
+ =?utf-8?B?MXZaYzl5T2lEcENONllmZnhXa3RsZnc4RUltc3Rwb1F3alNqTXJ2dDAyb1lW?=
+ =?utf-8?B?c3hCZ2xHK3BMNXdSUHNXK1M2NlpILzZtcmxKVEhzTXkrWC9EMy9VbStFYVpu?=
+ =?utf-8?B?Q2lyTVJsTkprZGkvcFFKYTBULy9RNU52R2lyQlRKL0ZxOXhzSEczdz09?=
+Content-Type: multipart/alternative;
+	boundary="_000_CYYPR16MB54917351604D4FE996348DE79346ACYYPR16MB5491namp_"
+MIME-Version: 1.0
+X-Exchange-RoutingPolicyChecked:
+	RZg5I5O6z0EO1QpuQD4UFEOx62EzR65K6JXoDpTrnbyUKUVK69CGyZFlbOD56PGipLkb6nmm6/173GWBgaOBSVeZ9oEbltAnSMW3qJo3yOIV9EhELa/fINVJNqubeKMj3Dx3j1EPnw/bEPv8bPt856tu8sieigbZEMOfsW13mHmdNIwjN6fXnMHuDLlHBrFbdvcsFKUfpV7cKUhyMh9VogjRuTTT09elnNvG3ms6SjYMpTbZnJr6smMavxbLTJtHXkvr175rKIXMKTSXnA7KqyOLNbIr+D9adFZ0LYvYExV674zkXNX42TYh+j+Mlywvyu5xohJMnQq9e5xYvcYC5Q==
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0:
+	MJnnJYGIB6/XE0T9diUU+btVrVL/SdlR1RlOuUH0WNAdmdYuu3AlZVLxJ9MV3uhe6py13SaPyWaEjvuXIpotk/fiWUJ8rE4ay4SB+GC+IfHHfQxrc0hGldqWG5pjykHUOVTavWnyC/WmGdYU8NBYfwddgC8Nl4C9q9GOsuqvx/ROOiz1hwTBndp9JHka3ZM/A3kuuUPsWrNjMh2GgDo0Ujto6rYJJzioQ0QgcHu8FYEX2x1gs/Ep31aFaFm75iemqYMvbs6IIIzXmgk0e9zN78cvAciTtQdDg8gbGVk2LbWo3UUwP0Iom+OBQWwosFRXLCr9a/D7p8yF/05yAMmNm/3t1Qm6khD1tJdg3jFulWXQjpXN+4Tn5+ZyhJCLautPx2oTfI/cvLgSesfYCWjEXT637W0M4ychNQxdsM6oPTbuO+9D1wW2jraPJrGD8eV1DFK7Ak4JUVSNOutTdlvtUCIyc7DygMPQxHCKbx8UxXW+pIzwlLq6HFMkLw+1G5EkSJ7DDA8+FAZLYQuUkQv7eL4pPq3Wl54gnSWhWSxsYTUI1mjV6KebVrtcSVcKOE1oKRVUEAtGbOJCB2BWWgdGP5qsD4gnk5DbO9hA7beIFD9R/EtGvTGs6PcbTHmEntvT
+X-OriginatorOrg: loves.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: CYYPR16MB5491.namprd16.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6f16c55b-e4fc-4a33-b824-08de7ec74a23
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Mar 2026 17:05:54.0468
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 80132c19-eaaa-4b91-acf7-a3ed9a50c97b
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Bxv1w2ggLc75vY+j3qTs3Cj2sIl7E/x9XLsTmL9stVF3U0fQqG8N8IXCSiki5UCGsGUAfksyhqGg2RW/F5O6hg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR16MB5438
+X-Proofpoint-ORIG-GUID: 2yluxIMmqqDDTmV2jYFa3Md__Y_r1vIc
+X-Authority-Analysis: v=2.4 cv=GZMaXAXL c=1 sm=1 tr=0 ts=69b04f74 cx=c_pps
+ a=1KNXh0H2uH8UbroYoe6UKA==:117 a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19
+ a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19 a=xqWC_Br6kY4A:10 a=Yq5XynenixoA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=VRkZ2mQG4izjkC8t4ngu:22 a=QHZ_dnQL371bKyQdv26u:22
+ a=FAq99klnAAAA:8 a=RpNjiQI2AAAA:8 a=pGLkceISAAAA:8 a=n37cInvpFP4qJxg_4xUA:9
+ a=lqcHg5cX4UMA:10 a=QEXdDO2ut3YA:10 a=yMhMjlubAAAA:8 a=SSmOFEACAAAA:8
+ a=pcVdGnce1q5R5tt36i0A:9 a=NpkX96ixfINOrzQX:21 a=gKO2Hq4RSVkA:10
+ a=UiCQ7L4-1S4A:10 a=hTZeC7Yk6K0A:10 a=frz4AuCg-hUA:10
+ a=vYFEUYC0diKySl6fIFQz:22
+X-Proofpoint-GUID: 2yluxIMmqqDDTmV2jYFa3Md__Y_r1vIc
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzEwMDE0OCBTYWx0ZWRfX2bBMxufGJW2F
+ 65b+NTxpnhhMJaP2KYu3dOKgqEHqiQdMRTirBjip6ecB3UcWZe6B+fujd1czakYOdEeYyni+OWu
+ +asNsXULf4P8uT/3Q/K8mVTYZffs9gINXfEagx6FdgAW/QNZMpqwGjrRpsFdb3UNd9QR5hNnBe2
+ 2tBiD0veYLKyAGcHTLrEVelIXRsWDvCc4Zuvn0QmP+y5tNH4Y51VUf8s9MYmq5e/o1lcKbk4PU8
+ Prxeu3KwuTdRvSdSxjPAHzuOAoTn7b3lvd0SI39/V5fnkawZtBrp5dZoNM0coML0/zNTlNVl6OG
+ jafNNgu0j7izh5Fem3RxCFRsRUBRMH86yRuW9muxbA2znNOg3T0r+b3dyA0wJJV+wWFP9WufF6X
+ e6cXON+ZKs8cB7B/fKkX/GplqpY1cGOIK3dqO7B97QavQzZ/0vJIGSgJsQ18gm2gjrOMd3YAfdO
+ VZEhKJC+KcK4Z1k3Reg==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-10_03,2026-03-09_02,2025-10-01_01
+
+--_000_CYYPR16MB54917351604D4FE996348DE79346ACYYPR16MB5491namp_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Hello,
+
+Those requests must go to: lovessolutionssales@loves.com<mailto:lovessoluti=
+onssales@loves.com>
+
+Thank you,
+
+From: Randall Carter <rjcarter2.rc@gmail.com>
+Sent: Tuesday, March 10, 2026 10:22 AM
+To: Latoya Mukes <Latoya.Mukes@loves.com>
+Subject: [EXT] Factoring Agreement
+
+Can you please send a copy can't seem to locate mine at the moment Randall =
+J Carter =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D
+
+Can you please send a copy can't seem to locate mine at the moment
+Randall J Carter
+
+----------------------------------------------------------------------
+Love's Travel Stops & Country Stores, Inc.From the Love=E2=80=99s Family of=
+ Companies:  This email neither constitutes an agreement to conduct transac=
+tions by electronic means nor creates or amends any legally binding contrac=
+t or enforceable obligation in the absence of a fully signed written contra=
+ct authorizing the same. This email, and any attachments and/or documents l=
+inked to this email may contain confidential and/or proprietary information=
+ and are nonetheless intended to be viewed and used legally by the individu=
+al(s) to whom addressed. Please immediately delete from your system any ema=
+il you receive from us in error. Any views or opinions in this email or any=
+ attachment are solely those of the author and do not necessarily represent=
+ those of our companies.
+
+--_000_CYYPR16MB54917351604D4FE996348DE79346ACYYPR16MB5491namp_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/of=
+fice/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+span.EmailStyle21
+	{mso-style-type:personal-compose;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style>
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple" style=3D"word-wrap:brea=
+k-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">Hello,<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Those requests must go to: <a href=3D"mailto:lovesso=
+lutionssales@loves.com">
+lovessolutionssales@loves.com</a><u><o:p></o:p></u></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Thank you,<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif"> Randall Carter &lt;rjcarter2.r=
+c@gmail.com&gt;
+<br>
+<b>Sent:</b> Tuesday, March 10, 2026 10:22 AM<br>
+<b>To:</b> Latoya Mukes &lt;Latoya.Mukes@loves.com&gt;<br>
+<b>Subject:</b> [EXT] Factoring Agreement<o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:.75pt"><span style=3D"f=
+ont-size:1.0pt;color:white">Can you please send a copy can't seem to locate=
+ mine at the moment Randall J Carter =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D
+ =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:.75pt"><span style=3D"f=
+ont-size:1.0pt;color:white"><o:p></o:p></span></p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">Can you please send a copy can't seem to locate mine=
+ at the moment<o:p></o:p></p>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Times New Roman&quo=
+t;,serif">Randall J Carter</span><o:p></o:p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<HR><h3>Love&#39;s Travel Stops & Country Stores, Inc.</h3><p>From the Love=
+&rsquo;s Family of Companies:  This email neither constitutes an agreement =
+to conduct transactions by electronic means nor creates or amends any legal=
+ly binding contract or enforceable obligation in the absence of a fully sig=
+ned written contract authorizing the same. This email, and any attachments =
+and/or documents linked to this email may contain confidential and/or propr=
+ietary information and are nonetheless intended to be viewed and used legal=
+ly by the individual(s) to whom addressed. Please immediately delete from y=
+our system any email you receive from us in error. Any views or opinions in=
+ this email or any attachment are solely those of the author and do not nec=
+essarily represent those of our companies.</p>
+</body>
+</html>
+
+--_000_CYYPR16MB54917351604D4FE996348DE79346ACYYPR16MB5491namp_--

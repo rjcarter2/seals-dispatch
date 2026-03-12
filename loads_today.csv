@@ -1,0 +1,5 @@
+pickup_city,delivery_city,trip_miles,deadhead_miles,weight_lbs,rate,broker
+Detroit MI,Chicago IL,282,98,8500,1200,Uber Freight
+Flint MI,Columbus OH,210,55,9000,950,Arrive Logistics
+Saginaw MI,Indianapolis IN,315,0,8700,1350,Integrity Express
+Detroit MI,Louisville KY,340,110,9200,1400,Mode Transportation

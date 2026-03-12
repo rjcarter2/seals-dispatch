@@ -1,0 +1,7 @@
+pickup_city,delivery_city,trip_miles,deadhead_miles,weight_lbs,rate,broker,stops
+Detroit MI,Chicago IL,282,98,8500,1200,Uber Freight,1
+Flint MI,Columbus OH,210,55,9000,950,Arrive Logistics,1
+Saginaw MI,Indianapolis IN,315,0,8700,1350,Integrity Express,1
+Detroit MI,Louisville KY,340,110,9200,1400,Mode Transportation,1
+Flint MI, Columbus OH,210,55,9000,950,Arrive Logistics,1
+Romulus MI,Milan MI,141.73,0,8700,262,Amazon Relay,7
