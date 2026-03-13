@@ -1,5 +1,7 @@
-SEALS DISPATCH SERVICES
+SEALS DISPATCH DETROIT FREIGHT SCANNER
 Date: 2026-03-12
+
+Target TRUE RPM: 3.5
 
 1. Saginaw MI -> Indianapolis IN
    Vehicle: Box Truck
@@ -25,12 +27,9 @@ Date: 2026-03-12
    Decision: TAKE
    Broker: Arrive Logistics
 
-BEST LOAD TODAY
-Saginaw MI -> Indianapolis IN
-Rate: $1350
-TRUE RPM: $4.29/mile
-Profit Score: $1098
-Suggested Bid: $866
-Minimum Bid: $709
-Decision: TAKE
-Broker: Integrity Express
+TOP LANES
+Saginaw MI -> Indianapolis IN | Loads: 1 | Avg TRUE RPM: $4.29/mile | Avg Profit: $1098
+Flint MI -> Columbus OH | Loads: 1 | Avg TRUE RPM: $3.58/mile | Avg Profit: $738
+
+
+HISTORICAL TOP LANES
