@@ -1,3 +1,5 @@
 .env
-.env.*
 __pycache__/
+daily_loads/
+dispatch_report_*.txt
+archive/
