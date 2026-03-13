@@ -25,18 +25,6 @@ Date: 2026-03-12
    Decision: TAKE
    Broker: Arrive Logistics
 
-3. Flint MI ->  Columbus OH
-   Vehicle: Box Truck
-   Trip Miles: 210  Deadhead: 55
-   Rate: $950
-   TRUE RPM: $3.58/mile
-   Profit Score: $738
-   Stops: 1
-   Suggested Bid: $578
-   Minimum Bid: $472
-   Decision: TAKE
-   Broker: Arrive Logistics
-
 BEST LOAD TODAY
 Saginaw MI -> Indianapolis IN
 Rate: $1350

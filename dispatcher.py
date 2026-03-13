@@ -1,12 +1,14 @@
 import csv
 from datetime import datetime
 from twilio.rest import Client
+import os
+from dotenv import load_dotenv
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 EMAIL_ADDRESS = "rjcarter2.rc@gmail.com"
-EMAIL_PASSWORD = "PASTE_GMAIL_APP_PASSWORD""
+EMAIL_PASSWORD = "PASTE_GMAIL_APP_PASSWORD"
 EMAIL_TO = "rjcarter2.rc@gmail.com"
 # -----------------------------
 # TWILIO SETTINGS
@@ -15,6 +17,16 @@ TWILIO_ACCOUNT_SID = "PASTE_TWILIO_ACCOUNT_SID"
 TWILIO_AUTH_TOKEN = "PASTE_TWILIO_AUTH_TOKEN"
 TWILIO_FROM = "+19896258638"
 TWILIO_TO = "+19892944631"
+load_dotenv()
+
+TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_FROM = os.getenv("TWILIO_FROM")
+TWILIO_TO = os.getenv("TWILIO_TO")
+
+EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_TO = os.getenv("EMAIL_TO")
 
 # -----------------------------
 # SEALS DISPATCH SETTINGS
@@ -174,7 +186,6 @@ for i, load in enumerate(top_loads, 1):
 # -----------------------------
 if not top_loads:
     print("No qualifying loads found.")
-    print("Dispatch scan complete.")
     print("Time:", datetime.now())
     raise SystemExit
 
